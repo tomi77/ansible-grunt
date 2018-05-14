@@ -1,0 +1,5 @@
+---
+- name: run
+  command: "{{ grunt_executable }}grunt {{ task | default('') }}"
+  args:
+    chdir: "{{ chdir | default('.') }}"

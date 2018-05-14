@@ -1,0 +1,25 @@
+galaxy_info:
+  author: Tomasz Jakub Rup
+  description: A Ansible role to run Grunt tasks
+
+  license: MIT
+
+  min_ansible_version: 1.2
+
+  platforms:
+  - name: Ubuntu
+    versions:
+    - all
+  - name: Debian
+    versions:
+    - all
+  - name: Fedora
+    versions:
+    - all
+  - name: EL
+    versions:
+    - all
+
+  galaxy_tags:
+  - development
+  - grunt
