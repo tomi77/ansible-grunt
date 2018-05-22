@@ -6,7 +6,7 @@ A Ansible role to run Grunt tasks
 | Name             | Default | Description |
 | ---------------- | ------- | ----------- |
 | grunt_executable |         | Path to `grunt` executable to use. |
-| task             |         | Task to execute |
+| task             |         | Task (or tasks) to execute |
 | chdir            | .       | Location of a project |
 
 ## Examples
@@ -26,4 +26,11 @@ A Ansible role to run Grunt tasks
 # Specify project location
 - role: tomi77.grunt
   chdir: /location/of/a/project
+
+# Run tasks
+- role: tomi77.grunt
+  task:
+  - prepare
+  - build
+  - clean
 ~~~
