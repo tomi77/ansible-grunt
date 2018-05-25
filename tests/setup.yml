@@ -1,0 +1,13 @@
+---
+- hosts: localhost
+  tasks:
+  - name: Install Grunt cli
+    npm:
+      name: grunt-cli
+      state: present
+      global: yes
+  - name: Install Grunt
+    npm:
+      name: grunt
+      state: present
+      path: "{{ pwd }}/tests"

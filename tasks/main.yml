@@ -4,3 +4,4 @@
   args:
     chdir: "{{ chdir | default('.') }}"
   with_items: "{{ task | default('') }}"
+  register: grunt_output

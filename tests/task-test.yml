@@ -1,0 +1,15 @@
+---
+- name: When task is provided
+  hosts: localhost
+
+  roles:
+  - role: local-grunt
+    vars:
+      task: build
+      chdir: "{{ pwd }}/tests"
+
+  tasks:
+  - name: Assert proper command is executed
+    fail:
+      msg: bad command executed
+    when: grunt_output.results[0].cmd | join(' ') != 'grunt build'
