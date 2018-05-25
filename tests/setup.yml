@@ -1,16 +1,16 @@
 ---
 - hosts: all
   tasks:
-  - name: Install required packages
-    apt:
-      name: "{{ item }}"
-    with_items:
-    - npm
-    - nodejs
-    - ca-certificates
-
-  - name: Bypass https
-    shell: npm config set strict-ssl false
+  # - name: Install required packages
+  #   apt:
+  #     name: "{{ item }}"
+  #   with_items:
+  #   - npm
+  #   - nodejs
+  #   - ca-certificates
+  #
+  # - name: Bypass https
+  #   shell: npm config set strict-ssl false
 
   - name: Install Grunt CLI
     npm:
