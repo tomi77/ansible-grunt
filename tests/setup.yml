@@ -1,13 +1,15 @@
 ---
 - hosts: localhost
   tasks:
+  - name: Install NPM
+    apt:
+      name: npm
+
   - name: Install Grunt cli
     npm:
       name: grunt-cli
       state: present
       global: yes
-    become: true
-    become_user: root
 
   - name: Install Grunt
     npm:
