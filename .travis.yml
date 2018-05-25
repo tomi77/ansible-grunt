@@ -42,7 +42,7 @@ before_install:
 script:
   - echo localhost > inventory
   - printf '[defaults]\nroles_path = ../' > ansible.cfg
-  - ansible-playbook -i inventory --connection=local --extra-vars "pwd=${PWD}" --user travis -v "tests/${TEST_FILE}"
+  - ansible-playbook -i inventory --connection=local --extra-vars "pwd=${PWD}" --sudo -v "tests/${TEST_FILE}"
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
