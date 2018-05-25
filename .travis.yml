@@ -2,19 +2,33 @@ language: python
 
 env:
   - ANSIBLE_VERSION: "1.2.3"
+    TEST_FILE: "main-2.3.yml"
   - ANSIBLE_VERSION: "1.3.4"
+    TEST_FILE: "main-2.3.yml"
   - ANSIBLE_VERSION: "1.4.5"
+    TEST_FILE: "main-2.3.yml"
   - ANSIBLE_VERSION: "1.5.5"
+    TEST_FILE: "main-2.3.yml"
   - ANSIBLE_VERSION: "1.6.10"
+    TEST_FILE: "main-2.3.yml"
   - ANSIBLE_VERSION: "1.7.2"
+    TEST_FILE: "main-2.3.yml"
   - ANSIBLE_VERSION: "1.8.4"
+    TEST_FILE: "main-2.3.yml"
   - ANSIBLE_VERSION: "1.9.6"
+    TEST_FILE: "main-2.3.yml"
   - ANSIBLE_VERSION: "2.0.2"
+    TEST_FILE: "main-2.3.yml"
   - ANSIBLE_VERSION: "2.1.6"
+    TEST_FILE: "main-2.3.yml"
   - ANSIBLE_VERSION: "2.2.3"
+    TEST_FILE: "main-2.3.yml"
   - ANSIBLE_VERSION: "2.3.3"
+    TEST_FILE: "main-2.3.yml"
   - ANSIBLE_VERSION: "2.4.4"
+    TEST_FILE: "main.yml"
   - ANSIBLE_VERSION: "2.5.3"
+    TEST_FILE: "main.yml"
 
 before_install:
   - sudo apt-get -y install software-properties-common
@@ -27,7 +41,7 @@ before_install:
 
 script:
   - echo localhost > inventory
-  - ansible-playbook -i inventory --connection=local --sudo --extra-vars "pwd=${PWD}" -v tests/main.yml
+  - ansible-playbook -i inventory --connection=local --sudo --extra-vars "pwd=${PWD}" -v "tests/${TEST_FILE}"
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
