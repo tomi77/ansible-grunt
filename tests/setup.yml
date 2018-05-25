@@ -8,6 +8,9 @@
     - npm
     - ca-certificates
 
+  - name: Bypass https
+    shell: npm config set strict-ssl false
+
   - name: Install Grunt CLI
     npm:
       name: grunt-cli
