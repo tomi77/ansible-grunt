@@ -7,7 +7,12 @@
     with_items:
     - npm
     - ca-certificates
-    - node-grunt-cli
+
+  - name: Install Grunt CLI
+    npm:
+      name: grunt-cli
+      state: present
+      global: yes
 
   - name: Install Grunt
     npm:
