@@ -14,7 +14,7 @@
 
   - shell: echo ${PATH}
 
-  - shell: whereis npm
+  - shell: whereis yarn
 
   - name: Install Grunt CLI
     npm:
