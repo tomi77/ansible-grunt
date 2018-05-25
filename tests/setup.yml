@@ -1,19 +1,8 @@
 ---
 - hosts: all
   tasks:
-  # - name: Install required packages
-  #   apt:
-  #     name: "{{ item }}"
-  #   with_items:
-  #   - npm
-  #   - nodejs
-  #   - ca-certificates
-  #
-  # - name: Bypass https
-  #   shell: npm config set strict-ssl false
-
   - name: Install Grunt CLI
-    shell: yarn global add grunt-cli
+    shell: nvm use node; yarn global add grunt-cli
 
   - name: Install Grunt
-    shell: cd "{{ pwd }}/tests"; yarn add grunt
+    shell: cd "{{ pwd }}/tests"; nvm use node; yarn add grunt
