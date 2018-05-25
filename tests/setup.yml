@@ -12,6 +12,10 @@
   # - name: Bypass https
   #   shell: npm config set strict-ssl false
 
+  - shell: echo ${PATH}
+
+  - shell: whereis npm
+
   - name: Install Grunt CLI
     npm:
       name: grunt-cli
