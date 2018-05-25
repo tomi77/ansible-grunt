@@ -1,15 +1,13 @@
 ---
 - hosts: localhost
   tasks:
-  - name: Install NPM
+  - name: Install required packages
     apt:
-      name: npm
-
-  - name: Install Grunt cli
-    npm:
-      name: grunt-cli
-      state: present
-      global: yes
+      name: "{{ item }}"
+    with_items:
+    - npm
+    - ca-certificates
+    - node-grunt-cli
 
   - name: Install Grunt
     npm:
