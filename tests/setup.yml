@@ -6,6 +6,9 @@
       name: grunt-cli
       state: present
       global: yes
+    become: true
+    become_user: root
+
   - name: Install Grunt
     npm:
       name: grunt

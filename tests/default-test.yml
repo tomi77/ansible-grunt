@@ -1,7 +1,6 @@
 ---
 - name: When task is not provided
   hosts: localhost
-  remote_user: root
 
   roles:
   - role: ansible-grunt
