@@ -1,6 +1,6 @@
 ---
 - name: When task is provided
-  hosts: localhost
+  hosts: all
 
   roles:
   - role: ansible-grunt
