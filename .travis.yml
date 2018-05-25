@@ -38,6 +38,7 @@ before_install:
   - cd tests
   - npm install
   - cd ..
+  - whereis npm
 
 script:
   # - echo "localhost ansible_connection=local" > inventory
