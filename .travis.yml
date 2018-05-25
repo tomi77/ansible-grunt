@@ -36,9 +36,9 @@ before_install:
   - sudo pip install ansible==$ANSIBLE_VERSION
   - ansible --version
   - cd tests
+  - whereis npm
   - npm install
   - cd ..
-  - whereis npm
 
 script:
   # - echo "localhost ansible_connection=local" > inventory
