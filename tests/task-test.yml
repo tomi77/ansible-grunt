@@ -1,9 +1,10 @@
 ---
 - name: When task is provided
   hosts: localhost
+  remote_user: root
 
   roles:
-  - role: local-grunt
+  - role: ansible-grunt
     vars:
       task: build
       chdir: "{{ pwd }}/tests"
