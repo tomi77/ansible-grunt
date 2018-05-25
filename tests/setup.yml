@@ -12,18 +12,8 @@
   # - name: Bypass https
   #   shell: npm config set strict-ssl false
 
-  - shell: echo ${PATH}
-
-  - shell: whereis yarn
-
   - name: Install Grunt CLI
-    npm:
-      name: grunt-cli
-      state: present
-      global: yes
+    shell: yarn global add grunt-cli
 
   - name: Install Grunt
-    npm:
-      name: grunt
-      state: present
-      path: "{{ pwd }}/tests"
+    shell: cd "{{ pwd }}/tests"; yarn add grunt
