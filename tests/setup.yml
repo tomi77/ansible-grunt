@@ -7,6 +7,8 @@
       yarn global add grunt-cli
     args:
       executable: /bin/bash
+    become: true
+    become_user: root
 
   - name: Install Grunt
     shell: |
