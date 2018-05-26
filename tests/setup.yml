@@ -2,7 +2,16 @@
 - hosts: all
   tasks:
   - name: Install Grunt CLI
-    shell: nvm use node; yarn global add grunt-cli
+    shell: |
+      nvm use node
+      yarn global add grunt-cli
+    args:
+      executable: /bin/bash
 
   - name: Install Grunt
-    shell: cd "{{ pwd }}/tests"; nvm use node; yarn add grunt
+    shell: |
+      nvm use node
+      yarn add grunt
+    args:
+      chdir: "{{ pwd }}/tests"
+      executable: /bin/bash
