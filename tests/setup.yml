@@ -3,7 +3,7 @@
 
   pre_tasks:
   - name: activate nvm
-    shell: source /usr/share/nvm/init-nvm.sh
+    shell: source ~/.profile
 
   - name: activate node
     shell: nvm use node
