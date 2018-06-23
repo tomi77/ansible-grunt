@@ -5,7 +5,7 @@
     chdir: "{{ chdir | default('.') }}"
   with_items: "{{ task | default('') }}"
   register: grunt_output
-  when: not node_version
+  when: node_version is undefined
 
 - name: run task in nvm
   shell: |
@@ -15,7 +15,7 @@
     chdir: "{{ chdir | default('.') }}"
   with_items: "{{ task | default('') }}"
   register: grunt_output
-  when: node_version and not nvm_init_script
+  when: node_version is defined and nvm_init_script is undefined
 
 - name: activate nvm and run task
   shell: |
@@ -27,4 +27,4 @@
     executable: /bin/bash
   with_items: "{{ task | default('') }}"
   register: grunt_output
-  when: node_version and nvm_init_script
+  when: node_version is defined and nvm_init_script is defined
