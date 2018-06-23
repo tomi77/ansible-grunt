@@ -13,4 +13,4 @@
   - name: Assert proper command is executed
     fail:
       msg: bad command executed
-    when: grunt_output.results[0].cmd | join(' ') != 'grunt'
+    when: grunt_output.results[0].cmd.split("\n")[-1] | trim != 'grunt' or grunt_output.results[0].stdout_lines[-1] != 'Done.'
