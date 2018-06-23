@@ -3,7 +3,7 @@
 
   pre_tasks:
   - name: activate nvm
-    shell: source ~/.profile
+    shell: "source {{ pwd }}/.profile"
 
   - name: activate node
     shell: nvm use node

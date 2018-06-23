@@ -31,8 +31,7 @@ env:
     TEST_FILE: "main.yml"
 
 before_install:
-  - sudo apt-get -y install software-properties-common
-  - sudo apt-get -y install python-pip
+  - sudo apt-get -y install software-properties-common python-pip tree
   - sudo pip install ansible==$ANSIBLE_VERSION
   - ansible --version
   - cd tests
@@ -41,6 +40,7 @@ before_install:
 
 script:
   - tree ~
+  - cat ~/.profile
   # - echo "localhost ansible_connection=local" > inventory
   - printf '[defaults]\nroles_path = ../' > ansible.cfg
   # - ansible-playbook -i inventory --connection=local --extra-vars "pwd=${PWD}" --sudo -v "tests/${TEST_FILE}"
