@@ -17,7 +17,7 @@
   register: grunt_output
   when: node_version and not nvm_init_script
 
-- name: activate nvm and run task in nvm
+- name: activate nvm and run task
   command: |
     source {{ nvm_init_script }}
     nvm use {{ node_version }}
