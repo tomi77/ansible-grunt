@@ -7,6 +7,8 @@
     vars:
       task: build
       chdir: "{{ pwd }}/tests"
+      node_version: node
+      nvm_init_script: /home/travis/.nvm/nvm.sh
 
   tasks:
   - name: Assert proper command is executed

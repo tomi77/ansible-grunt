@@ -1,22 +1,22 @@
 ---
 - hosts: all
 
-  pre_tasks:
-  - name: activate nvm
-    shell: "source /home/travis/.nvm/nvm.sh"
+  tasks:
+  - name: Install Grunt CLI
+    shell: |
+      source /home/travis/.nvm/nvm.sh
+      nvm use node
+      yarn global add grunt-cli
+    become: true
+    become_user: root
     args:
       executable: /bin/bash
 
-  - name: activate node
-    shell: nvm use node
-
-  tasks:
-  - name: Install Grunt CLI
-    shell: yarn global add grunt-cli
-    become: true
-    become_user: root
-
   - name: Install Grunt
-    shell: yarn add grunt
+    shell: |
+      source /home/travis/.nvm/nvm.sh
+      nvm use node
+      yarn add grunt
     args:
       chdir: "{{ pwd }}/tests"
+      executable: /bin/bash
