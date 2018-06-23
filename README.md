@@ -8,6 +8,8 @@ A Ansible role to run Grunt tasks
 | grunt_executable |         | Path to `grunt` executable to use. |
 | task             |         | Task (or tasks) to execute |
 | chdir            | .       | Location of a project |
+| node_version     |         | NVM Node.js version tag |
+| nvm_init_script  |         | Path to BASH script that activate NVM |
 
 ## Examples
 
@@ -33,4 +35,9 @@ A Ansible role to run Grunt tasks
   - prepare
   - build
   - clean
+
+# Run in NVM
+- role: tomi77.grunt
+  node_version: stable
+  nvm_init_script: /home/travis/.nvm/nvm.sh
 ~~~
