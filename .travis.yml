@@ -40,6 +40,7 @@ before_install:
   - cd ..
 
 script:
+  - ls -la ~
   # - echo "localhost ansible_connection=local" > inventory
   - printf '[defaults]\nroles_path = ../' > ansible.cfg
   # - ansible-playbook -i inventory --connection=local --extra-vars "pwd=${PWD}" --sudo -v "tests/${TEST_FILE}"
