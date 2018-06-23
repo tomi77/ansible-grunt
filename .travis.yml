@@ -39,12 +39,8 @@ before_install:
   - cd ..
 
 script:
-  - ls ~/.bash_profile.d/
-  - ls ~/.nvm/
-  - ls ~/.travis
-  - cat ~/.bash_profile
-  - cat ~/.bashrc
-  - cat ~/.zshrc
+  - cat ~/.bash_profile.d/nvm.bash
+  - cat ~/.nvm/nvm.sh
   # - echo "localhost ansible_connection=local" > inventory
   - printf '[defaults]\nroles_path = ../' > ansible.cfg
   # - ansible-playbook -i inventory --connection=local --extra-vars "pwd=${PWD}" --sudo -v "tests/${TEST_FILE}"

@@ -2,8 +2,11 @@
 - hosts: all
 
   pre_tasks:
+  - name: view home dir
+    shell: ls -la /home/travis/
+
   - name: activate nvm
-    shell: "source /home/travis/.profile"
+    shell: "source /home/travis/.nvm/nvm.sh"
 
   - name: activate node
     shell: nvm use node
