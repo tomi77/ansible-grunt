@@ -2,8 +2,8 @@
 - name: run task with global nodejs
   shell: "{{ grunt_executable }}grunt {{ item }}"
   args:
-    chdir: "{{ chdir | default('.') }}"
-  with_items: "{{ task | default('') }}"
+    chdir: "{{ chdir }}"
+  with_items: "{{ task }}"
   register: grunt_output1
   when: node_version is undefined
 
@@ -12,8 +12,8 @@
     nvm use {{ node_version }}
     {{ grunt_executable }}grunt {{ item }}
   args:
-    chdir: "{{ chdir | default('.') }}"
-  with_items: "{{ task | default('') }}"
+    chdir: "{{ chdir }}"
+  with_items: "{{ task }}"
   register: grunt_output2
   when: node_version is defined and nvm_init_script is undefined
 
@@ -23,9 +23,9 @@
     nvm use {{ node_version }}
     {{ grunt_executable }}grunt {{ item }}
   args:
-    chdir: "{{ chdir | default('.') }}"
+    chdir: "{{ chdir }}"
     executable: /bin/bash
-  with_items: "{{ task | default('') }}"
+  with_items: "{{ task }}"
   register: grunt_output3
   when: node_version is defined and nvm_init_script is defined
 
