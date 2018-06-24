@@ -1,4 +1,4 @@
 ---
-# - include: setup.yml
+- include: setup.yml
 - include: default-test.yml
 - include: task-test.yml
