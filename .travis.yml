@@ -42,7 +42,7 @@ before_install:
 
 script:
   - printf '[defaults]\nroles_path = ../' > ansible.cfg
-  - ansible-playbook -i "localhost," --connection=local --extra-vars "pwd=${PWD}" --user travis -v "tests/${TEST_FILE}"
+  - ansible-playbook --extra-vars "pwd=${PWD}" --user travis -v "tests/${TEST_FILE}"
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
