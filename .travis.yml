@@ -31,9 +31,11 @@ env:
     TEST_FILE: "main.yml"
 
 before_install:
-  - sudo apt-get -y install software-properties-common python-pip tree
+  - sudo apt-get -y install software-properties-common python-pip
   - sudo pip install ansible==$ANSIBLE_VERSION
   - ansible --version
+  - npm install --global grunt-cli
+  - grunt --version
   - cd tests
   - npm install
   - cd ..

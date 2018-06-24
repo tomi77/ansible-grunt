@@ -1,4 +1,4 @@
 ---
-- import_playbook: setup.yml
+# - import_playbook: setup.yml
 - import_playbook: default-test.yml
 - import_playbook: task-test.yml
