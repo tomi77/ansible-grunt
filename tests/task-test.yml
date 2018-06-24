@@ -1,6 +1,7 @@
 ---
 - name: When task is provided
   hosts: localhost
+  gather_facts: no
 
   roles:
   - role: ansible-grunt
