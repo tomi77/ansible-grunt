@@ -4,7 +4,7 @@
   args:
     chdir: "{{ chdir | default('.') }}"
   with_items: "{{ task | default('') }}"
-  register: grunt_output
+  register: grunt_output1
   when: node_version is undefined
 
 - name: run task in nvm
@@ -14,7 +14,7 @@
   args:
     chdir: "{{ chdir | default('.') }}"
   with_items: "{{ task | default('') }}"
-  register: grunt_output
+  register: grunt_output2
   when: node_version is defined and nvm_init_script is undefined
 
 - name: activate nvm and run task
@@ -26,5 +26,8 @@
     chdir: "{{ chdir | default('.') }}"
     executable: /bin/bash
   with_items: "{{ task | default('') }}"
-  register: grunt_output
+  register: grunt_output3
   when: node_version is defined and nvm_init_script is defined
+
+- set_fact:
+    grunt_output: "{{ grunt_output1 if grunt_output1 is not skipped else grunt_output2 if grunt_output2 is not skipped else grunt_output3 }}"

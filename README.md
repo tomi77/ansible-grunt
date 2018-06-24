@@ -11,6 +11,10 @@ A Ansible role to run Grunt tasks
 | node_version     |         | NVM Node.js version tag |
 | nvm_init_script  |         | Path to BASH script that activate NVM |
 
+## Returns
+
+Fact ``grunt_output`` contains shell output.
+
 ## Examples
 
 ~~~yaml
