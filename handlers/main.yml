@@ -1,0 +1,12 @@
+---
+- name: set fact when run task with global nodejs
+  set_fact:
+    grunt_output: "{{ grunt_output1 }}"
+
+- name: set fact when run task in nvm
+  set_fact:
+    grunt_output: "{{ grunt_output2 }}"
+
+- name: set fact when activate nvm and run task
+  set_fact:
+    grunt_output: "{{ grunt_output3 }}"

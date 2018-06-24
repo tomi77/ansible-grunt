@@ -6,6 +6,7 @@
   with_items: "{{ task }}"
   register: grunt_output1
   when: node_version is undefined
+  notify: set fact when run task with global nodejs
 
 - name: run task in nvm
   shell: |
@@ -16,6 +17,7 @@
   with_items: "{{ task }}"
   register: grunt_output2
   when: node_version is defined and nvm_init_script is undefined
+  notify: set fact when run task in nvm
 
 - name: activate nvm and run task
   shell: |
@@ -28,15 +30,6 @@
   with_items: "{{ task }}"
   register: grunt_output3
   when: node_version is defined and nvm_init_script is defined
+  notify: set fact when activate nvm and run task
 
-- set_fact:
-    grunt_output: "{{ grunt_output1 }}"
-  when: grunt_output1 is not skipped and grunt_output1.changed
-
-- set_fact:
-    grunt_output: "{{ grunt_output2 }}"
-  when: grunt_output2 is not skipped and grunt_output2.changed
-
-- set_fact:
-    grunt_output: "{{ grunt_output3 }}"
-  when: grunt_output3 is not skipped and grunt_output3.changed
+- meta: flush_handlers
