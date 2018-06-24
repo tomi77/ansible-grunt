@@ -29,5 +29,8 @@
   register: grunt_output3
   when: node_version is defined and nvm_init_script is defined
 
+- debug:
+    msg: "{{ grunt_output1 }}"
+
 - set_fact:
     grunt_output: "{{ grunt_output1 if grunt_output1 is not skipped else grunt_output2 if grunt_output2 is not skipped else grunt_output3 }}"

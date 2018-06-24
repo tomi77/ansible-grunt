@@ -27,7 +27,7 @@ env:
     TEST_FILE: "main-2.3.yml"
   - ANSIBLE_VERSION: "2.4.4"
     TEST_FILE: "main.yml"
-  - ANSIBLE_VERSION: "2.5.3"
+  - ANSIBLE_VERSION: "2.5.5"
     TEST_FILE: "main.yml"
 
 before_install:
